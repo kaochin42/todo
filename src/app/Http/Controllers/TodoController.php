@@ -7,8 +7,16 @@ use App\Models\Todo;
 
 class TodoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('index');
+        $todos = Todo::all();
+        return view('index', compact('todos'));
+    }
+
+    public function store(Request $request)
+    {
+        $todo = $request->only(['content']);
+        Todo::create($todo);
+        return redirect('/');
     }
 }

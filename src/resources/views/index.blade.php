@@ -31,6 +31,7 @@
         <div class="create-form__item">
             <input type="text" class="create-form__item-input" name="content" value="{{ old('content') }}">
             <select class="create-form__item-select" name="category_id">
+                <option value="">カテゴリ</option>
                 @foreach ($categories as $category)
                 <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                 @endforeach
@@ -48,6 +49,7 @@
         <div class="search-form__item">
             <input type="text" class="search-form__item-input" name="keyword" value="{{ old('keyword') }}">
             <select class="search-form__item-select" name="category_id">
+                <option value="">カテゴリ</option>
                 @foreach ($categories as $category)
                 <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                 @endforeach
